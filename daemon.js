@@ -86,8 +86,7 @@ export async function main(ns) {
         {name: "tor-manager.ns", shortName: "tor", isLaunched: false},
         {name: "program-manager.ns", shortName: "prog", isLaunched: false},
         {name: "ram-manager.ns", shortName: "ram", isLaunched: false},
-        {name: "agency-manager.ns", shortName: "agent", isLaunched: false},
-        {name: "aug-manager.ns", shortName: "aug", isLaunched: false}
+        {name: "agency-manager.ns", shortName: "agent", isLaunched: false}
     ];
     
     // get the name of this node
@@ -257,7 +256,7 @@ function establishMultipliers(ns) {
 }
 
 function buildToolkit(ns) {
-    var toolNames = ["weak-target.ns", "grow-target.ns", "hack-target.ns", "host-manager.ns", "node-manager.ns", "tor-manager.ns", "program-manager.ns", "ram-manager.ns", "agency-manager.ns", "aug-manager.ns"];
+    var toolNames = ["weak-target.ns", "grow-target.ns", "hack-target.ns", "host-manager.ns", "node-manager.ns", "tor-manager.ns", "program-manager.ns", "ram-manager.ns", "agency-manager.ns"];
     for (var i = 0; i < toolNames.length; i++) {
         var tool = {
             instance: ns,
@@ -284,8 +283,6 @@ function buildToolkit(ns) {
                         return "ram";
                     case "agency-manager.ns":
                         return "agent";
-                    case "aug-manager.ns":
-                        return "aug";
                 }
             },       
             canRun: function(server) {
